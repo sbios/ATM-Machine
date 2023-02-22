@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace ATM_Machine
@@ -39,7 +39,7 @@ namespace ATM_Machine
         {
             Dictionary<int, int> banknotesToWithdraw = new Dictionary<int, int>();
 
-            // Проверяем, что сумма для снятия кратна 100 так как это купюра с наименьшим номиналом.
+            // Проверяем, что сумма для снятия кратна 100.
             if (SumToWithdraw % 100 == 0)
             {
                 throw new ArgumentException("Сумма для вывода должна быть кратна 100.");
@@ -76,6 +76,19 @@ namespace ATM_Machine
                 }
             }
             return banknotesToWithdraw;
+        }
+
+        // Статический метод InputMoney представляет операцию пополнения счета через банкомата.
+        // Он принимает словарь в котором, ключ - номинал банкноты, 
+        // а значение - количество банкнот этого номинала, которые были положены в банкомат.
+        static public void InputMoney(Dictionary<int, int> inputBanknotes)
+        {
+            // проходимся по полученым купюрам
+            foreach(KeyValuePair<int,int> banknote in inputBanknotes)
+            {
+                // сумируем количество купюр в банкомате с количеством новым купюр
+                banknotes[banknote.Key] += banknote.Value;
+            }
         }
     }
 }
