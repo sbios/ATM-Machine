@@ -10,8 +10,7 @@
 ## Пример использования: ##
 
 ```
-ATM atm = new ATM();
-Dictionary<int, int> banknotesToWithdraw = atm.WithdrawMoney(1500);
+Dictionary<int, int> banknotesToWithdraw = ATM.WithdrawMoney(23500);
 foreach (KeyValuePair<int, int> banknote in banknotesToWithdraw)
 {
     Console.WriteLine("Номинал: {0}, количество: {1}", banknote.Key, banknote.Value);
