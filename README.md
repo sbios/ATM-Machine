@@ -53,5 +53,3 @@ static private Dictionary<int, int> banknotes = new Dictionary<int, int>()
     {100, 5},
 };
 ```
-### Автор ###
-Автор программы - sbios.
