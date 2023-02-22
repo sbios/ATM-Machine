@@ -39,7 +39,7 @@ namespace ATM_Machine
         {
             Dictionary<int, int> banknotesToWithdraw = new Dictionary<int, int>();
 
-            // Проверяем, что сумма для снятия кратна 100.
+            // Проверяем, что сумма для снятия кратна 100 так как это купюра с наименьшим номиналом.
             if (SumToWithdraw % 100 == 0)
             {
                 throw new ArgumentException("Сумма для вывода должна быть кратна 100.");
